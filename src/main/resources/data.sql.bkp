@@ -1,0 +1,9 @@
+--insert into seller(id, first_name,last_name,address,city, state, pin, phone, email)
+--values(10001, 'Debayan', 'Saha', '', '', '', 742101, 1234567890, 'abcde@gmail.com');
+--insert into seller(id, first_name,last_name,address,city, state, pin, phone, email)
+--values(10002, 'Steve', 'Jobs', '', '', '', 742101, 1234567890, 'abcde@gmail.com');
+
+--insert into product (id, name, short_desc, detailed_desc, category, start_price, bid_end_date, seller_id) 
+--values(10001, 'Asian paint', '', '', 'Painting', 100, sysdate() + 1, 10001);
+--insert into product (id, name, short_desc, detailed_desc, category, start_price, bid_end_date, seller_id) 
+--values(10002, 'Berger paint', '', '', 'Painting', 120, sysdate() + 1, 10002);
