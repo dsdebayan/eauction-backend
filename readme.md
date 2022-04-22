@@ -5,8 +5,11 @@ git commit -m ""
 git branch -M main
 git push -u origin main
 
+http://localhost:8761/
+
 http://localhost:8000/swagger-ui/index.html
 http://localhost:8000/h2-console
+http://localhost:8000/actuator
 
 spring-boot:build-image -DskipTests
 

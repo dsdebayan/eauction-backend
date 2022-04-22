@@ -30,11 +30,11 @@ public class Product {
 	
 	private String category;
 	
-	@PositiveOrZero
+	@PositiveOrZero(message="startPrice should be a valid numeric")
 	//@ApiModelProperty(notes="startPrice should be a valid numeric")
 	private Double startPrice;
 	
-	@Future
+	@Future(message="bidEndDate should be a future date")
 	//@ApiModelProperty(notes="bidEndDate should be a future date")
 	private Date bidEndDate;
 	

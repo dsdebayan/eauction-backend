@@ -1,15 +1,62 @@
 version: '3.7'
 
 services:
-  demo:
-    image: dsdebayan/eauction:0.0.1-SNAPSHOT
+
+  warehouse:
+    image: dsdebayan/eauction-eauction:0.0.1-SNAPSHOT
+    mem_limit: 1000m
     ports:
       - "8000:8000"
     networks:
       - eauction-network
+    depends_on:
+      - naming-server      
+    environment:
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-server:8761/eureka
+     
+  seller:
+    image: dsdebayan/eauction-seller:0.0.1-SNAPSHOT
+    mem_limit: 700m
+    ports:
+      - "8001:8001"
+    networks:
+      - eauction-network
+    depends_on:
+      - naming-server      
+    environment:
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-server:8761/eureka
+      
+  buyer:
+    image: dsdebayan/eauction-buyer:0.0.1-SNAPSHOT
+    mem_limit: 700m
+    ports:
+      - "8002:8002"
+    networks:
+      - eauction-network
+    depends_on:
+      - naming-server      
+    environment:
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-server:8761/eureka
+      
+  api-gateway:
+    image: dsdebayan/eauction-api-gateway:0.0.1-SNAPSHOT
+    mem_limit: 700m
+    ports:
+      - "8765:8765"
+    networks:
+      - eauction-network
+    depends_on:
+      - naming-server
+    environment:
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-server:8761/eureka
+      
+  naming-server:
+    image: dsdebayan/eauction-naming-server:0.0.1-SNAPSHOT
+    mem_limit: 700m
+    ports:
+      - "8761:8761"
+    networks:
+      - eauction-network
 
 networks:
-  eauction-network:      
-      
-
-      
+  eauction-network:
