@@ -106,7 +106,7 @@ public class SellerController {
 
 			BidInfo bidInfo;
 			for (Bid bid : bids) {
-				bidInfo = new BidInfo(bid.getBuyer().getFirstName(), bid.getBuyer().getEmail(), 
+				bidInfo = new BidInfo(bid.getId(), bid.getBuyer().getFirstName(), bid.getBuyer().getEmail(), 
 						bid.getBuyer().getPhone(), bid.getBidAmount());
 				bidInfos.add(bidInfo);
 			}

@@ -15,6 +15,7 @@ import javax.validation.constraints.Size;
 
 public class BidInfo {
 
+	private int id;
 	private String buyerName;
 	
 	private String email;
@@ -23,13 +24,28 @@ public class BidInfo {
 	
 	private Double bidAmount;
 
-	public BidInfo(String buyerName, String email, Integer phone, Double bidAmount) {
+	public BidInfo(int id, String buyerName, String email, Integer phone, Double bidAmount) {
 		super();
+		this.id=id;
 		this.buyerName = buyerName;
 		this.email = email;
 		this.phone = phone;
 		this.bidAmount = bidAmount;
 	}
+	
+	
+
+	public int getId() {
+		return id;
+	}
+
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
 
 	public String getBuyerName() {
 		return buyerName;
